@@ -1,6 +1,6 @@
         Program program004
 
-!       This program calculates the factorieal of a user-defined value
+!       This program calculates the factorieal of one or more user-defined value
         implicit none
         integer:: myValue, myResult
         
@@ -8,9 +8,12 @@
 
         write(*,*) 'Please Enter a Number for Factorial: '
         read(*,*) myValue
-
-        call factorial(myValue,myResult)
-        write(*,*)'The factorial of ',myValue,'is',myResult,'.'
+        do while(myValue>=0)
+          call factorial(myValue,myResult)
+          write(*,*)'The factorial of ',myValue,'is',myResult,'.'
+          write(*,*) 'Please Enter a Number for Factorial: '
+          read(*,*) myValue
+        endDo
 
         end Program program004
 
